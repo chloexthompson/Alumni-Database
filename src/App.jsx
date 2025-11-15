@@ -19,11 +19,10 @@ function App() {
       <Routes>
         <Route path="/" element={<OrgLogin />} />
         <Route path="/sign-in" element={<SignIn />}/>
+        <Route path="/create-profile" element={<CreateProfile />}/>
         {/*<Route path="/home" element={<Home />}/>
         <Route path="/my-profile" element={<MyProfile />}/>
-        <Route path="/view-profile" element={<ViewProfile />}/>
-        <Route path="/create-profile" element={<CreateProfile />}/> */}
-
+        <Route path="/view-profile" element={<ViewProfile />}/> */}
       </Routes>
     </BrowserRouter>
   );

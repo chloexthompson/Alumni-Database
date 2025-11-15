@@ -228,3 +228,25 @@ h2 {
   font-size: 12px;
   font-weight: bold;
 }
+
+/* Edit Profile button */
+#main-card .button,
+.profile-edit-buttons .button {
+    background-color: #2C514C;
+    color: #E3C0D3;
+    margin: 8px;
+    padding: 5px;
+    border-radius: 10px;
+    height: 40px;
+    width: 110px;
+    align-items: center;
+    font-size: medium;
+    border: none;
+    cursor: pointer;
+}
+
+/* Cancel button - specific styling */
+.button-cancel {
+    background-color: #C8C8C8;
+    color: #4C4C4C;
+}

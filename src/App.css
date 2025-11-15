@@ -1,119 +1,32 @@
-
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  background: "E3C0D3";
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: "e3c0d3";
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color:black;
+    text-align: center;
 }
 
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "Georgia", serif;
-  background-color: #e5c3d1;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-  height: 100vh;
+.input {
+    width: 100px;
+    height: 30px;
+    border-radius: 30px;
 }
 
-.title {
-  margin-top: 60px;
-  font-size: 40px;
-  text-align: center;
-  color: #000;
+.main-card {
+    width: 300px;
+    height: 200px;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    background-color: white;
 }
 
-.card {
-  margin-top: 30px;
-  width: 600px;
-  background-color: #e6e6e6;
-  padding: 60px 40px;
-  border-radius: 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-  text-align: center;
+h1 {
+    font-size: xxx-large;
+    font-weight: lighter;
 }
 
-h2 {
-  font-size: 20px;
-  margin-bottom: 25px;
-  font-weight: bold;
+.button {
+    background-color: green;
 }
-
-input[type="text"] {
-  width: 60%;
-  padding: 12px;
-  border-radius: 20px;
-  border: none;
-  background-color: #d5d5d5;
-  outline: none;
-  font-size: 14px;
-}
-
-.small-link {
-  font-size: 12px;
-  margin-top: 8px;
-  display: block;
-  color: #333;
-  text-decoration: none;
-}
-
-button {
-  margin-top: 15px;
-  padding: 10px 30px;
-  border: none;
-  border-radius: 10px;
-  background-color: #285047;
-  color: white;
-  font-size: 14px;
-  cursor: pointer;
-  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-}
-
-button:hover {
-  opacity: 0.9;
-}
-
-
-
-
-
-
-
-/*
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-} */

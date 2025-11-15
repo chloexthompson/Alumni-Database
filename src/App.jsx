@@ -1,54 +1,35 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 
-<<<<<<< HEAD
 // import your pages
-// import OrgLogin from "./pages/org-login.jsx";
-<<<<<<< HEAD
-// import OrgLogin from "./pages/org-login.jsx";
-// import Home from "./pages/home.jsx";
+
+
+import OrgLogin from "./pages/org-login.jsx";
+import Home from "./pages/home.jsx";
 // import MyProfile from "./pages/my-profile.jsx";
-//  import SignIn from "./pages/sign-in.jsx";
-=======
-// import Home from "./pages/home.jsx";
-import MyProfile from "./pages/my-profile.jsx";
-// import SignIn from "./pages/sign-in.jsx";
->>>>>>> faith
+import SignIn from "./pages/sign-in.jsx";
 // import ViewProfile from "./pages/profile.jsx";
 import CreateProfile from "./pages/create-profile.jsx";
 // import AlumniProfile from "./pages/AlumniProfile";
 // import About from "./pages/About";
-// import CreateProfile from "./pages/create-profile.jsx";
-=======
-import OrgLogin from "./pages/org-login.jsx";
- import Home from "./pages/home.jsx";
-// import MyProfile from "./pages/my-profile.jsx";
- import SignIn from "./pages/sign-in.jsx";
-// import ViewProfile from "./pages/profile.jsx";
-import CreateProfile from "./pages/create-profile.jsx";
-// import AlumniProfile from "./pages/AlumniProfile";
->>>>>>> 0c095c72bdb91285dce21a85d73eb30559dc741c
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-<<<<<<< HEAD
-<<<<<<< HEAD
+
         {/* <Route path="/" element={<OrgLogin />} />
         <Route path="/sign-in" element={<SignIn />}/> */}
         {/*<Route path="/home" element={<Home />}/>
-=======
         <Route path="/my-profile" element={<MyProfile />}/>
         {/* <Route path="/" element={<OrgLogin />} /> */}
         {/* <Route path="/sign-in" element={<SignIn />}/>
         <Route path="/home" element={<Home />}/>
->>>>>>> faith
         <Route path="/my-profile" element={<MyProfile />}/>
         <Route path="/view-profile" element={<ViewProfile />}/>
         <Route path="/create-profile" element={<CreateProfile />}/> */}
       
-              <Route path="/create-profile" element={<CreateProfile />}/>
+        <Route path="/create-profile" element={<CreateProfile />}/>
 =======
         <Route path="/" element={<OrgLogin />} />
         <Route path="/sign-in" element={<SignIn />}/>
@@ -57,8 +38,6 @@ function App() {
         {/*<Route path="/my-profile" element={<MyProfile />}/>
         <Route path="/view-profile" element={<ViewProfile />}/>
          */}
->>>>>>> 0c095c72bdb91285dce21a85d73eb30559dc741c
-
       </Routes>
     </BrowserRouter>
   );

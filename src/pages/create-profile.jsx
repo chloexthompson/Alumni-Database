@@ -1,4 +1,4 @@
- import { useState } from 'react';
+import { useState } from 'react';
 
 export default function CreateProfile() {
   const [firstName, setFirstName] = useState('');
@@ -31,21 +31,19 @@ export default function CreateProfile() {
   };
 
   return (
-    <div style={{
+    <div className="page-container" style={{
       minHeight: '100vh',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
       backgroundColor: '#e3c0d3',
       fontFamily: "Georgia, 'Times New Roman', Times, serif",
       padding: '20px'
     }}>
-      <div style={{
+      <div id="main-card" style={{
         width: '800px',
-        minHeight: '600px',
+        minHeight: '500px',
         borderRadius: '15px',
         boxShadow: '0 2px 8px rgba(0,0,0,0.3)',
         backgroundColor: '#e1e1e1',
+        margin: '30px',
         padding: '40px'
       }}>
         <h1 style={{
@@ -114,13 +112,20 @@ export default function CreateProfile() {
             />
             <label
               htmlFor="profile-pic-input"
+              className="button"
               style={{
-                backgroundColor: '#2C514C',
-                color: 'white',
-                padding: '10px 20px',
-                borderRadius: '30px',
-                fontSize: '14px',
+                backgroundColor: '#2c514c',
+                color: '#e3c0d3',
+                margin: '8px',
+                padding: '5px',
+                borderRadius: '10px',
+                height: '40px',
+                width: '110px',
+                fontSize: 'medium',
                 cursor: 'pointer',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
                 fontFamily: "Georgia, 'Times New Roman', Times, serif"
               }}
             >
@@ -128,16 +133,16 @@ export default function CreateProfile() {
             </label>
           </div>
 
-          {/* Right side - Please enter */}
+          {/* Right side - Enter Information */}
           <div style={{
             flex: 1,
             display: 'flex',
             flexDirection: 'column',
-            gap: '20px'
+            gap: '15px'
           }}>
             <h2 style={{
               fontSize: 'x-large',
-              fontWeight: 'lighter',
+              fontWeight: 'bold',
               marginBottom: '10px',
               color: 'black',
               textAlign: 'left'
@@ -148,25 +153,29 @@ export default function CreateProfile() {
             <div>
               <label style={{
                 display: 'block',
-                marginBottom: '8px',
+                marginBottom: '5px',
                 textAlign: 'left',
-                fontSize: '16px',
-                color: 'black'
+                fontSize: 'medium',
+                color: 'black',
+                fontWeight: 'lighter'
               }}>
                 First Name
               </label>
               <input
+                className="input"
                 type="text"
                 value={firstName}
                 onChange={(e) => setFirstName(e.target.value)}
                 style={{
                   width: '100%',
-                  height: '40px',
+                  height: '43px',
                   borderRadius: '30px',
-                  border: '1px solid #ccc',
-                  padding: '0 20px',
-                  fontSize: '16px',
-                  backgroundColor: 'white',
+                  textAlign: 'left',
+                  margin: '10px 0',
+                  backgroundColor: '#c8c8c8',
+                  border: 'none',
+                  padding: '9px',
+                  fontSize: 'medium',
                   color: 'black'
                 }}
               />
@@ -175,25 +184,29 @@ export default function CreateProfile() {
             <div>
               <label style={{
                 display: 'block',
-                marginBottom: '8px',
+                marginBottom: '5px',
                 textAlign: 'left',
-                fontSize: '16px',
-                color: 'black'
+                fontSize: 'medium',
+                color: 'black',
+                fontWeight: 'lighter'
               }}>
                 Last Name
               </label>
               <input
+                className="input"
                 type="text"
                 value={lastName}
                 onChange={(e) => setLastName(e.target.value)}
                 style={{
                   width: '100%',
-                  height: '40px',
+                  height: '43px',
                   borderRadius: '30px',
-                  border: '1px solid #ccc',
-                  padding: '0 20px',
-                  fontSize: '16px',
-                  backgroundColor: 'white',
+                  textAlign: 'left',
+                  margin: '10px 0',
+                  backgroundColor: '#c8c8c8',
+                  border: 'none',
+                  padding: '9px',
+                  fontSize: 'medium',
                   color: 'black'
                 }}
               />
@@ -202,25 +215,29 @@ export default function CreateProfile() {
             <div>
               <label style={{
                 display: 'block',
-                marginBottom: '8px',
+                marginBottom: '5px',
                 textAlign: 'left',
-                fontSize: '16px',
-                color: 'black'
+                fontSize: 'medium',
+                color: 'black',
+                fontWeight: 'lighter'
               }}>
                 Email
               </label>
               <input
+                className="input"
                 type="email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 style={{
                   width: '100%',
-                  height: '40px',
+                  height: '43px',
                   borderRadius: '30px',
-                  border: '1px solid #ccc',
-                  padding: '0 20px',
-                  fontSize: '16px',
-                  backgroundColor: 'white',
+                  textAlign: 'left',
+                  margin: '10px 0',
+                  backgroundColor: '#c8c8c8',
+                  border: 'none',
+                  padding: '9px',
+                  fontSize: 'medium',
                   color: 'black'
                 }}
               />
@@ -229,25 +246,29 @@ export default function CreateProfile() {
             <div>
               <label style={{
                 display: 'block',
-                marginBottom: '8px',
+                marginBottom: '5px',
                 textAlign: 'left',
-                fontSize: '16px',
-                color: 'black'
+                fontSize: 'medium',
+                color: 'black',
+                fontWeight: 'lighter'
               }}>
                 School Name
               </label>
               <input
+                className="input"
                 type="text"
                 value={schoolName}
                 onChange={(e) => setSchoolName(e.target.value)}
                 style={{
                   width: '100%',
-                  height: '40px',
+                  height: '43px',
                   borderRadius: '30px',
-                  border: '1px solid #ccc',
-                  padding: '0 20px',
-                  fontSize: '16px',
-                  backgroundColor: 'white',
+                  textAlign: 'left',
+                  margin: '10px 0',
+                  backgroundColor: '#c8c8c8',
+                  border: 'none',
+                  padding: '9px',
+                  fontSize: 'medium',
                   color: 'black'
                 }}
               />
@@ -256,26 +277,30 @@ export default function CreateProfile() {
             <div>
               <label style={{
                 display: 'block',
-                marginBottom: '8px',
+                marginBottom: '5px',
                 textAlign: 'left',
-                fontSize: '16px',
-                color: 'black'
+                fontSize: 'medium',
+                color: 'black',
+                fontWeight: 'lighter'
               }}>
                 Year
               </label>
               <input
+                className="input"
                 type="text"
                 value={year}
                 onChange={(e) => setYear(e.target.value)}
                 placeholder="e.g., 2024"
                 style={{
                   width: '100%',
-                  height: '40px',
+                  height: '43px',
                   borderRadius: '30px',
-                  border: '1px solid #ccc',
-                  padding: '0 20px',
-                  fontSize: '16px',
-                  backgroundColor: 'white',
+                  textAlign: 'left',
+                  margin: '10px 0',
+                  backgroundColor: '#c8c8c8',
+                  border: 'none',
+                  padding: '9px',
+                  fontSize: 'medium',
                   color: 'black'
                 }}
               />
@@ -289,15 +314,19 @@ export default function CreateProfile() {
           marginTop: '30px'
         }}>
           <button
+            className="button"
             onClick={handleSubmit}
             style={{
-              backgroundColor: '#2C514C',
-              color: 'white',
-              padding: '12px 50px',
-              borderRadius: '30px',
-              border: 'none',
-              fontSize: '18px',
+              backgroundColor: '#2c514c',
+              color: '#e3c0d3',
+              margin: '8px',
+              padding: '5px',
+              borderRadius: '10px',
+              height: '40px',
+              width: '110px',
+              fontSize: 'medium',
               cursor: 'pointer',
+              border: 'none',
               fontFamily: "Georgia, 'Times New Roman', Times, serif"
             }}
           >
@@ -309,13 +338,14 @@ export default function CreateProfile() {
           marginTop: '20px',
           fontSize: '14px',
           color: 'black',
-          textAlign: 'center'
+          textAlign: 'center',
+          fontWeight: 'lighter'
         }}>
           Already have an account?{' '}
           <span
             onClick={() => console.log('Navigate to sign in')}
             style={{
-              color: '#2C514C',
+              color: '#2c514c',
               textDecoration: 'underline',
               cursor: 'pointer'
             }}

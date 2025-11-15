@@ -1,0 +1,32 @@
+* {
+    padding: 5px;
+    background-color: #e1e1e1;
+    border-radius: 10px;
+}
+
+.headshot-shape {
+    border-radius: 50%;
+    width: 60px;
+    height: 50px;
+    margin: 5px;
+}
+
+h2 {
+    font-size:large;
+    margin:5px;
+}
+
+h3 {
+    font-size: medium;
+    margin:8px;
+}
+
+.grad-year-box {
+    font-size:medium;
+    color: #2c514c;
+    background-color: #95818d;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    border-radius: 10px;
+    margin:8px;
+    padding:4px;
+}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-function App() {
+function CreateProfile() {
   const [profileImage, setProfileImage] = useState(null);
   const [formData, setFormData] = useState({
     firstName: '',
@@ -36,7 +36,70 @@ function App() {
   };
 
   return (
-    <div className="page-container" style={{ minHeight: '100vh', display: 'flex' }}>
+    <div className="page-container" style={{ minHeight: '100vh' }}>
+      <style>{`
+        .profile-content {
+          display: flex;
+          gap: 30px;
+          align-items: flex-start;
+          background: transparent;
+        }
+
+        .profile-left {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+          background: transparent;
+        }
+
+        .profile-picture-container {
+          width: 150px;
+          height: 150px;
+          border-radius: 50%;
+          background-color: #c8c8c8;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          overflow: hidden;
+          cursor: pointer;
+          position: relative;
+        }
+
+        .profile-picture-container img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+
+        .profile-picture-placeholder {
+          font-size: 14px;
+          color: #666;
+          background: transparent;
+        }
+
+        .upload-button {
+          background-color: #2c514c;
+          color: #e3c0d3;
+          padding: 8px 16px;
+          border-radius: 10px;
+          cursor: pointer;
+          font-size: small;
+          border: none;
+        }
+
+        .profile-right {
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
+          background: transparent;
+          flex: 1;
+        }
+
+        input[type="file"] {
+          display: none;
+        }
+      `}</style>
 
       <div id="main-card">
         <h2 style={{ marginBottom: '20px', background: 'transparent' }}>Create Profile</h2>
@@ -67,7 +130,6 @@ function App() {
 
           <div className="profile-right">
             <input
-              className="input"
               type="text"
               name="firstName"
               placeholder="First Name"
@@ -75,7 +137,6 @@ function App() {
               onChange={handleInputChange}
             />
             <input
-              className="input"
               type="text"
               name="lastName"
               placeholder="Last Name"
@@ -83,7 +144,6 @@ function App() {
               onChange={handleInputChange}
             />
             <input
-              className="input"
               type="email"
               name="email"
               placeholder="Email Address"
@@ -91,7 +151,6 @@ function App() {
               onChange={handleInputChange}
             />
             <input
-              className="input"
               type="text"
               name="school"
               placeholder="School"
@@ -99,7 +158,6 @@ function App() {
               onChange={handleInputChange}
             />
             <input
-              className="input"
               type="text"
               name="year"
               placeholder="Year"
@@ -109,7 +167,7 @@ function App() {
           </div>
         </div>
 
-        <button className="button" onClick={handleSubmit}>
+        <button onClick={handleSubmit}>
           Save
         </button>
       </div>
@@ -117,4 +175,4 @@ function App() {
   );
 }
 
-export default App;
+export default CreateProfile;

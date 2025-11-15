@@ -1,3 +1,5 @@
+///import ProfileCard from "/src/components/profile-card.jsx";
+
 export default function Home() {
     return(
         <>
@@ -6,13 +8,15 @@ export default function Home() {
                 networg
             </h1>
             <div class="filter-container">
-  <label class="filter-label">Filter by:</label>
+  <h3 >Filter by:</h3>
 
   <input type="text" class="filter-input" placeholder="Name" />
 
   <div class="filter-dropdown">
     <select>
       <option>Grad State</option>
+      <option>Student</option>
+      <option>Alumni</option>
     </select>
   </div>
 

@@ -14,27 +14,32 @@ export default function SignIn() {
         </h2>
 
        <div className="input-container">
-  <div className="input-row">
+      <div className="input-row">
 
     <input type="email" id="email" placeholder="Email" />
-  </div>
+    </div>
 
-  <div className="input-row">
-    <input type="password" id="password" placeholder="Password" />
-  </div>
-</div>
+      <div className="input-row">
+      <input type="password" id="password" placeholder="Password" />
+    </div>
+      </div>
         <a
           href="#"
         >
           Forgot Password?
         </a>
         <div></div>
-        <button>
-            Register
-        </button>
+        <a href="/create-profile">
+            <button>
+              Register
+            </button>
+        </a>
+        <a href="/home">
         <button>
             Sign In
         </button>
+        </a>
+        
 
         </div>
       </div>

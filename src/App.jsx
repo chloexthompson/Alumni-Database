@@ -14,9 +14,6 @@ function App() {
       <Routes>
         {/* <Route path="/" element={<Profile />} /> */}
         <Route path="/" element={<OrgLogin />} />
-        {/* <Route path="/sign-in" element={<SignIn />}/>
-        <Route path="/home" element={<Home />}/>
-        <Route path="/" element={<OrgLogin />} />
         <Route path="/sign-in" element={<SignIn />}/>
         <Route path="/home" element={<Home />}/>
         <Route path="/create-profile" element={<CreateProfile />}/>

@@ -20,10 +20,11 @@ export default function OrgLogin() {
           Need Code?
         </a>
         <div></div>
-        <button className="button"
-        >
+        <a href="/sign-in"> 
+        <button>
           Enter
         </button>
+        </a>
         </div>
       </div>
     </div>

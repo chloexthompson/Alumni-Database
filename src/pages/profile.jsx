@@ -1,1 +1,3 @@
-// hello this is a tester
+export default function Profile(){
+    
+}

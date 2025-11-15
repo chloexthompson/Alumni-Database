@@ -9,9 +9,6 @@ export default function SignIn() {
         <a href="/">
             <img src="/src/assets/logout.png" className="icon-image"/>
             </a>
-       
-       <img src="https://d112y698adiu2z.cloudfront.net/photos/production/challenge_photos/001/258/597/datas/full_width.png" 
-       className="logo-image"/>
         <h2>
           Sign In
         </h2>

@@ -6,12 +6,12 @@ export default function OrgLogin() {
         <>
         <div>
         <h1 >networg</h1>
-
-      <div className="main-card">
+        <div className="page-container">
+      <div id="main-card">
         <h2>
           Enter Organization Code
         </h2>
-        <input
+        <input className="input"
         />
         <a
           href="#"
@@ -20,10 +20,11 @@ export default function OrgLogin() {
           Need Code?
         </a>
         <div></div>
-        <button
+        <button className="button"
         >
           Enter
         </button>
+        </div>
       </div>
     </div>
         </>

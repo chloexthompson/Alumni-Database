@@ -1,4 +1,5 @@
 import ProfileCard from "/src/components/profile-card.jsx";
+import Header from "/src/components/header-icon.jsx";
 import { useEffect, useState } from "react";
 import { db } from "../firebase";
 import { collection, getDocs } from "firebase/firestore";
@@ -59,6 +60,8 @@ export default function Home() {
     <>
       <div>
         <h1>networg</h1>
+
+        <Header />
 
         {/* FILTER BAR */}
         <div className="filter-container">

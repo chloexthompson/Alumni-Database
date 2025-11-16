@@ -2,74 +2,65 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
 
 // import your pages
+<<<<<<< HEAD
 // import OrgLogin from "./pages/org-login.jsx";
 import OrgLogin from "./pages/org-login.jsx";
 // import Home from "./pages/home.jsx";
 // import MyProfile from "./pages/my-profile.jsx";
  import SignIn from "./pages/sign-in.jsx";
+=======
+
+
+import OrgLogin from "./pages/org-login.jsx";
+import Home from "./pages/home.jsx";
+// import MyProfile from "./pages/my-profile.jsx";
+import SignIn from "./pages/sign-in.jsx";
+>>>>>>> 3dce0ac958c94c1328f493b2b5ecf17b678c65df
 // import ViewProfile from "./pages/profile.jsx";
 import CreateProfile from "./pages/create-profile.jsx";
 // import AlumniProfile from "./pages/AlumniProfile";
 // import About from "./pages/About";
+<<<<<<< HEAD
 // import CreateProfile from "./pages/create-profile.jsx";
+=======
+>>>>>>> 3dce0ac958c94c1328f493b2b5ecf17b678c65df
 
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+<<<<<<< HEAD
+=======
+
+        {/* <Route path="/" element={<OrgLogin />} />
+        <Route path="/sign-in" element={<SignIn />}/> */}
+        {/*<Route path="/home" element={<Home />}/>
+        <Route path="/my-profile" element={<MyProfile />}/>
+        {/* <Route path="/" element={<OrgLogin />} /> */}
+        {/* <Route path="/sign-in" element={<SignIn />}/>
+        <Route path="/home" element={<Home />}/>
+        <Route path="/my-profile" element={<MyProfile />}/>
+        <Route path="/view-profile" element={<ViewProfile />}/>
+        <Route path="/create-profile" element={<CreateProfile />}/> */}
+      
+        <Route path="/create-profile" element={<CreateProfile />}/>
+=======
+>>>>>>> 3dce0ac958c94c1328f493b2b5ecf17b678c65df
         <Route path="/" element={<OrgLogin />} />
         <Route path="/sign-in" element={<SignIn />}/>
         <Route path="/create-profile" element={<CreateProfile />}/>
+<<<<<<< HEAD
         {/*<Route path="/home" element={<Home />}/>
         <Route path="/my-profile" element={<MyProfile />}/>
         <Route path="/view-profile" element={<ViewProfile />}/> */}
+=======
+        {/*<Route path="/my-profile" element={<MyProfile />}/>
+        <Route path="/view-profile" element={<ViewProfile />}/>
+         */}
+>>>>>>> 3dce0ac958c94c1328f493b2b5ecf17b678c65df
       </Routes>
     </BrowserRouter>
   );
 }
 
 export default App;
-
-
-
-
-
-
-
-
-// import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import OrgLogin from './pages/org-login.jsx'
-// import './App.css'
-
-// function App() {
-//   const [count, setCount] = useState(0)
-
-//   return (
-//     <>
-//       <div>
-//         <a href="https://vite.dev" target="_blank">
-//           <img src={viteLogo} className="logo" alt="Vite logo" />
-//         </a>
-//         <a href="https://react.dev" target="_blank">
-//           <img src={reactLogo} className="logo react" alt="React logo" />
-//         </a>
-//       </div>
-//       <h1>Vite + React</h1>
-//       <div className="card">
-//         <button onClick={() => setCount((count) => count + 1)}>
-//           count is {count}
-//         </button>
-//         <p>
-//           Edit <code>src/App.jsx</code> and save to test HMR
-//         </p>
-//       </div>
-//       <p className="read-the-docs">
-//         Click on the Vite and React logos to learn more
-//       </p>
-//     </>
-//   )
-// }
-
-// export default App

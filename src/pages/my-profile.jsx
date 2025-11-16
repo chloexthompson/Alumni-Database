@@ -74,6 +74,27 @@ export default function MyProfile() {
       fontFamily: 'Georgia, serif',
       display: 'block',
     }}>
+      {/* Back Button */}
+      <button
+        onClick={() => window.history.back()}
+        style={{
+          position: 'absolute',
+          top: '20px',
+          left: '20px',
+          backgroundColor: '#285047',
+          color: '#e5c3d1',
+          padding: '10px 20px',
+          borderRadius: '10px',
+          border: 'none',
+          fontSize: '16px',
+          cursor: 'pointer',
+          fontFamily: 'Georgia, serif',
+          fontWeight: 'bold',
+        }}
+      >
+        ← Back
+      </button>
+
       <h1 style={{
         fontSize: '48px',
         fontWeight: '300',

@@ -54,7 +54,7 @@ function CreateProfile() {
         }
 
         .profile-picture-container {
-          width: 2000px;
+          width: 200px;
           height: 200px;
           border-radius: 50%;
           background-color: #c8c8c8;

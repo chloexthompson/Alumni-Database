@@ -30,7 +30,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<Profile {...userData} />} />
+        {/* <Route path="/" element={<Profile {...userData} />} /> */}
         {/* <Route path="/" element={<Profile />} /> */}
         {/* <Route path="/" element={<OrgLogin />} /> */}
         {/* <Route path="/" element={<OrgLogin />} />

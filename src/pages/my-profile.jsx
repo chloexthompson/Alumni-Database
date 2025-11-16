@@ -116,6 +116,7 @@ export default function MyProfile() {
                   onChange={(e) => handleChange('email', e.target.value)}
                   placeholder="your.email@umd.edu"
                   className="profile-input"
+                  style={{textAlign: 'left'}}
                 />
               ) : (
                 <span className="profile-value">{profile.email || "Not provided"}</span>
@@ -195,7 +196,7 @@ export default function MyProfile() {
         {/* Academic Information */}
         <div className="profile-section">
           <h2 className="profile-section-title">Academic Information</h2>
-          <div className="profile-info-grid">
+          <div className="profile-info-grid" style={{gridTemplateColumns: '1fr', textAlign: 'left'}}>
             <div className="profile-info-item">
               <label className="profile-label">Major:</label>
               {isEditing ? (

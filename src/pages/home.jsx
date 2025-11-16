@@ -60,8 +60,9 @@ export default function Home() {
     <>
       <div>
         <h1>networg</h1>
-
-        <Header />
+        <div>
+          <Header />
+        </div>
 
         {/* FILTER BAR */}
         <div className="filter-container">

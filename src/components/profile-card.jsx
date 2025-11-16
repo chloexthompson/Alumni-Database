@@ -1,6 +1,6 @@
 import "profile-card.module.css";
 
-
+/* Make a function that converts gradStatus (boolean) to a string*/
 
 
 const ProfileCard = ({headshot, name, gradStatus, gradYear}) => {

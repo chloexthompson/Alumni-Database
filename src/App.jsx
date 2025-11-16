@@ -5,7 +5,7 @@ import "./pages/profile.css";
 // import your pages
 
 
-// import OrgLogin from "./pages/org-login.jsx";
+import OrgLogin from "./pages/org-login.jsx";
 import Home from "./pages/home.jsx";
 import MyProfile from "./pages/my-profile.jsx";
  //import SignIn from "./pages/sign-in.jsx";
@@ -59,7 +59,7 @@ function App() {
         {/*<Route path="/my-profile" element={<MyProfile />}/>
         <Route path="/view-profile" element={<ViewProfile />}/>
          */}
-        {/* <Route path="/" element={<Profile {...userData} />} /> */}
+        <Route path="/" element={<Profile {...userData} />} />
 
         {/* <Route path="/" element={<OrgLogin />} />
         <Route path="/sign-in" element={<SignIn />}/>

@@ -35,7 +35,7 @@ function App() {
         {/* <Route path="/" element={<OrgLogin />} /> */}
         {/* <Route path="/" element={<OrgLogin />} />
         <Route path="/sign-in" element={<SignIn />}/>
-        <Route path="/create-profile" element={<CreateProfile />}/> */}
+        <Route path="/create-profile" element={<CreateProfile />}/>}
       </Routes>
     </BrowserRouter>
   );

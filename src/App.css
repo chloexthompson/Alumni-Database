@@ -2,7 +2,6 @@
     margin: 0;
     padding: 3px;
     box-sizing: border-box;
-    background: "e3c0d3";
     font-family: Georgia, 'Times New Roman', Times, serif;
     color:black;
     font-weight: lighter;
@@ -117,6 +116,7 @@ h2 {
   border-radius: 20px;
   display: flex;
   align-items: center;
+  justify-content:space-between;
   gap: 15px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
@@ -158,8 +158,6 @@ h2 {
 .filter-input::placeholder {
   text-align: left;
 }
-
-
 
 .profile-container {
   display: flex;
@@ -233,25 +231,6 @@ h2 {
   width:300px;
 }
 
-.input-row {
-    display: flex;
-    align-items: center;     /* vertically align label + input */
-    margin-bottom: 1rem;     /* space between rows */
-}
-
-/* Make all labels the same width so inputs align nicely */
-.input-row label {
-    width: 120px;            
-    font-weight: 500;
-}
-
-/* Make inputs stretch or keep fixed width */
-.input-row input {
-    flex: 1;                 /* input expands to fill available space */
-    padding: 6px 10px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
 
 /* Example CSS for a slider toggle */
 .toggle-switch {
@@ -297,4 +276,12 @@ input:checked + .slider {
 
 input:checked + .slider:before {
   transform: translateX(96px);
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
 }

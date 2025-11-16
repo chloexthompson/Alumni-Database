@@ -17,6 +17,10 @@ const ProfileCard = ({ name, gradStatus, gradYear }) => {
       <div className={styles.gradYearBox}>
         Class of {gradYear}
       </div>
+
+      <a href="/view-profile">
+      <button>View Profile</button>
+      </a>
     </div>
    
   );

@@ -79,11 +79,11 @@ export default function MyProfile() {
         {/* Edit Buttons */}
         <div className="profile-edit-buttons">
           {!isEditing ? (
-            <button onClick={handleEdit} className="button">Edit Profile</button>
+            <button onClick={handleEdit} className="button" style={{color: 'white'}}>Edit Profile</button>
           ) : (
             <div className="profile-button-group">
               <button onClick={handleSave} className="button" style={{marginRight: '10px'}}>Save</button>
-              <button onClick={handleCancel} className="button" style={{backgroundColor: '#666'}}>Cancel</button>
+              <button onClick={handleCancel} className="button button-cancel">Cancel</button>
             </div>
           )}
         </div>

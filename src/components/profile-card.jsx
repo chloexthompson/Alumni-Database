@@ -6,8 +6,9 @@ const showGradStatus = (gradStatus) => {
 
 const ProfileCard = ({ name, gradStatus, gradYear }) => {
   return (
-    <div className={styles.card}>
-     {/* <img src={headshot} className={styles.headshot} alt="profile headshot" />*/ }
+   
+    <div id={styles.card} >
+      <img src="src/assets/profile.png" className={styles.headshotShape}  />
 
       <h2 className={styles.name}>{name}</h2>
 
@@ -17,6 +18,7 @@ const ProfileCard = ({ name, gradStatus, gradYear }) => {
         Class of {gradYear}
       </div>
     </div>
+   
   );
 };
 

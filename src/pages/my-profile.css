@@ -1,3 +1,27 @@
+/* Reset global styles for my-profile page */
+.profile-container * {
+  text-align: initial;
+  background: initial;
+}
+
+/* my-profile styling */
+.profile-container {
+  min-height: 100vh;
+  background-color: #e5c3d1;
+  padding: 20px;
+  font-family: 'Georgia', serif;
+}
+
+.profile-card {
+  max-width: 800px;
+  margin: 0 auto;
+  background-color: #e6e6e6;
+  padding: 40px;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+
 /* my-profile styling */
 .profile-container {
   min-height: 100vh;

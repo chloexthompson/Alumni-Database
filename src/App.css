@@ -32,15 +32,20 @@
 }
 
 #main-card {
+    position: absolute;
+    top: 140px;
+    bottom: 50px;
+
+    left: 0;
+    right: 0;
+    margin: auto;
     width: 50rem;
-    height: 28rem;
+    height: calc(100vh - 50px - 60px); 
+
     border-radius: 15px;
     box-shadow: 0 2px 8px rgba(0,0,0,0.3);
     background-color: #e1e1e1;
-    margin: 30px;
-    padding: 4rem;
-    position: relative;
-    
+    padding: 2rem;
 }
 
 h1 {
@@ -152,4 +157,144 @@ h2 {
 
 .filter-input::placeholder {
   text-align: left;
+}
+
+
+
+.profile-container {
+  display: flex;
+  justify-content: center;
+  gap: 70px;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-title {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+.image-upload-card {
+  width: 230px;
+  height: 280px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.plus-circle {
+  width: 120px;
+  height: 120px;
+  background: #e8e8e8;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 70px;
+  color: #555;
+  margin-bottom: 10px;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+.right-section {
+  display: flex;
+  flex-direction: column;
+  width: 420px;
+}
+
+.right-section label {
+  font-size: 16px;
+  margin-bottom: 4px;
+ 
+}
+
+.right-section input {
+  padding: 10px 12px;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  margin-bottom: 16px;
+  background: #f2f2f2;
+  font-size: 16px;
+  width:300px;
+}
+
+.input-row {
+    display: flex;
+    align-items: center;     /* vertically align label + input */
+    margin-bottom: 1rem;     /* space between rows */
+}
+
+/* Make all labels the same width so inputs align nicely */
+.input-row label {
+    width: 120px;            
+    font-weight: 500;
+}
+
+/* Make inputs stretch or keep fixed width */
+.input-row input {
+    flex: 1;                 /* input expands to fill available space */
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+/* Example CSS for a slider toggle */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.3s;
+  border-radius: 20px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #418159; /* green when checked */
+}
+
+input:checked + .slider:before {
+  transform: translateX(96px);
 }

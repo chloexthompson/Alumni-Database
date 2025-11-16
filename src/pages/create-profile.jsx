@@ -102,7 +102,7 @@ function CreateProfile() {
       `}</style>
 
       <div id="main-card">
-        <h2 style={{ marginBottom: '1px', background: 'transparent' }}>Create Profile</h2>
+        <h2 style={{ marginBottom: '0px', background: 'transparent' }}>Create Profile</h2>
         
         <div className="profile-content">
           <div className="profile-left">

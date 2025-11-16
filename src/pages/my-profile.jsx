@@ -8,7 +8,7 @@ export default function MyProfile() {
     phone: "",
     major: "",
     graduationYear: "",
-    status: "Current Student",
+    status: "",
     organization: "",
     role: "",
     joinedDate: "",
@@ -143,15 +143,37 @@ export default function MyProfile() {
               margin: '0 0 10px 0',
               textAlign: 'left',
             }}>{profile.role || "Your Role"} @ {profile.organization || "Your Organization"}</p>
-            <span style={{
-              display: 'inline-block',
-              backgroundColor: '#285047',
-              color: 'white',
-              padding: '5px 15px',
-              borderRadius: '15px',
-              fontSize: '12px',
-              fontWeight: 'bold',
-            }}>{profile.status}</span>
+            {isEditing ? (
+              <select
+                value={editedProfile.status}
+                onChange={(e) => handleChange('status', e.target.value)}
+                style={{
+                  display: 'inline-block',
+                  backgroundColor: '#285047',
+                  color: 'white',
+                  padding: '5px 15px',
+                  borderRadius: '15px',
+                  fontSize: '12px',
+                  fontWeight: 'bold',
+                  border: 'none',
+                  cursor: 'pointer',
+                }}
+              >
+                <option value="">Select Status</option>
+                <option value="Student">Student</option>
+                <option value="Alumni">Alumni</option>
+              </select>
+            ) : (
+              <span style={{
+                display: 'inline-block',
+                backgroundColor: '#285047',
+                color: 'white',
+                padding: '5px 15px',
+                borderRadius: '15px',
+                fontSize: '12px',
+                fontWeight: 'bold',
+              }}>{profile.status || "Select Status"}</span>
+            )}
           </div>
         </div>
 

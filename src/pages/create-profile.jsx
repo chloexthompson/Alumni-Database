@@ -22,12 +22,9 @@ export default function CreateProfile() {
 
 const handleSubmit = async () => {
   try {
-    let imageUrl = "";
-    if (headshot) {
-      const storageRef = ref(storage, `headshots/${headshot.name}`);
-      await uploadBytes(storageRef, headshot);
-      imageUrl = await getDownloadURL(storageRef);
-    }
+    
+
+    alert("clicked button");
 
     // Save profile info to Firestore
     await addDoc(collection(db, "Profiles"), {
@@ -36,7 +33,6 @@ const handleSubmit = async () => {
       graduationYear: gradYear,
       linkedin,
       status: status,       // your graduation toggle
-      headshot: imageUrl,
     });
 
     alert("Profile created successfully!");

@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import './App.css';
+import "./pages/profile.css";
 
-<<<<<<< HEAD
 // import your pages
 
 
@@ -13,17 +13,28 @@ import MyProfile from "./pages/my-profile.jsx";
 // import CreateProfile from "./pages/create-profile.jsx";
 // import AlumniProfile from "./pages/AlumniProfile";
 // import About from "./pages/About";
-=======
+
 import OrgLogin from "./pages/org-login.jsx";
 import SignIn from "./pages/sign-in.jsx";
 import CreateProfile from "./pages/create-profile.jsx";
->>>>>>> f3069b2c420dbec1694deb4657ffc85bce963f1a
+
+import Profile from "./pages/profile.jsx";
+
 
 function App() {
+  const userData = {
+    firstName: "Alex",
+    lastName: "Wang",
+    major: "Finance",
+    gradYear: 2027,
+    referralStatus: "Pending",
+    description: "This is a short profile description about Alex Wang.",
+    skills: ["Mathamatics", "Finance Bro", "Investing"]
+  };
+  
   return (
     <BrowserRouter>
       <Routes>
-<<<<<<< HEAD
         <Route path="/my-profile" element={<MyProfile />}/>
         {/* <Route path="/" element={<OrgLogin />} />
         <Route path="/sign-in" element={<SignIn />}/> */}
@@ -45,11 +56,12 @@ function App() {
         {/*<Route path="/my-profile" element={<MyProfile />}/>
         <Route path="/view-profile" element={<ViewProfile />}/>
          */}
-=======
+        {/* <Route path="/" element={<Profile {...userData} />} /> */}
+
         <Route path="/" element={<OrgLogin />} />
         <Route path="/sign-in" element={<SignIn />}/>
         <Route path="/create-profile" element={<CreateProfile />}/>
->>>>>>> f3069b2c420dbec1694deb4657ffc85bce963f1a
+
       </Routes>
     </BrowserRouter>
   );

@@ -1,71 +1,60 @@
+import { useState } from "react";
 
-export default function Profile(){
+export default function Profile({ firstName, lastName, major, gradYear, referralStatus, description, skills }){
+    const [connected, setConnected] = useState(false);
+
     return(
         <div className="profile-page">
-            <div className="profile-card">
+            <div className="header-icons">
+                <div className="icon-container">
+                    <img src="https://cdn-icons-png.flaticon.com/128/1286/1286853.png" alt="logout" />
+                    <img src="https://cdn-icons-png.flaticon.com/128/15753/15753894.png" alt="profile" />
+                    <img src="https://cdn-icons-png.flaticon.com/128/1946/1946488.png" alt="home" />
+                </div>
+            </div>
 
-                <div className="left-col">
-                    <img
-                        src="https://cdn-icons-png.flaticon.com/128/847/847969.png"
-                        alt="profile"
-                        className="profile-img"
-                    />
-
-                    <button className="connect-btn">+ Connect</button>
-
-                    <h3 className="skills-title">Skills/Interests</h3>
-
-                    <div className="skills-box">
-                        <li className="skill">Python ✕</li>
-                        <li className="skill">Power BI ✕</li>
-                        <li className="skill">Tableau ✕</li>
-                        <li className="skill">Analytics ✕</li>
+            <div className="profile-container">
+                <div className="profile-left">
+                    <div className="profile-image-circle">
+                        <img src="https://cdn-icons-png.flaticon.com/128/847/847969.png" alt="profile icon" />
                     </div>
+                    <button 
+                        className="connect-btn"
+                        onClick={() => setConnected(!connected)}
+                    >
+                        {connected ? "Connected" : "+ Connect"}
+                    </button>
                 </div>
 
-                {/* RIGHT COLUMN */}
-                <div className="right-col">
+                <div className="profile-right">
+                    <div className="profile-top-row">
+                        <div className="profile-info">
+                            <h2 className="profile-name">{firstName || 'First Name'} {lastName || 'Last Name'}</h2>
+                            <p className="major">{major || 'Major'}</p>
+                            <p className="grad-year">{gradYear || 'Graduation Year'}</p>
+                            <p className="referral">{referralStatus ? `Referral Status: ${referralStatus}` : 'Referral Status'}</p>
+                        </div>
 
-                <div className="profile-details">
-                    <div>
-                    <h2>First Name, Last Name</h2>
-                    <p>Graduation Year</p>
-                    <p>Referral Status</p>
-                    <p>Major</p>
+                        <div className="connections-box">
+                            <p className="connections-title">Connections</p>
+                            <p className="connections-number">12</p>
+                        </div>
                     </div>
 
-                    <div className="connections-box">
-                    <h3>Connections</h3>
-                    <p className="connection-num">12</p>
+                    <div className="profile-description">
+                        {description || 'Description'}
+                    </div>
+
+                    <div className="skills-section">
+                        <div className="skills-title">Skills/Interests</div>
+                        <div className="skills-list">
+                            {(skills && skills.length > 0 ? skills : ['Python', 'Power BI', 'Tableau', 'Analytics']).map((skill, index) => (
+                                <span key={index} className="skill-pill">{skill}</span>
+                            ))}
+                        </div>
                     </div>
                 </div>
-
-                <textarea
-                    className="description-box"
-                    placeholder="Description"
-                ></textarea>
-                </div>
-
             </div>
         </div>
-        // <>
-        // <div>
-        //     <img src="https://cdn-icons-png.flaticon.com/128/847/847969.png" alt="profile icon" />
-        // </div>
-        // <div>
-        //     <h2>First Name, Last Name</h2>
-        //     <h2>Graduation Year</h2>
-        //     <h2>Referral Status</h2>
-        //     <h2>Major</h2>
-        // </div>
-        // <div>
-        //     <h2>Connections</h2>
-        //     <h1>0</h1>
-        // </div>
-        // <div>
-        //     <h1>Description</h1>
-        // </div>
-        // </>
-        
     );
 }

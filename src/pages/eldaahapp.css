@@ -167,4 +167,159 @@
   padding: 8px 22px;
   border-radius: 12px;
   font-size: 15px;
+
+/* Create Profile Styles */
+.profile-page {
+  min-height: 100vh;
+  background-color: #e3c0d3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.profile-page h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+#main-card {
+  width: 50rem;
+  max-width: 90%;
+  background-color: #e1e1e1;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  padding: 2rem;
+  position: relative;
+}
+
+.left-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.image-upload-card {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  background-color: #c8c8c8;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
+}
+
+.plus-circle {
+  font-size: 48px;
+  color: #666;
+  background: transparent;
+}
+
+.image-upload-card p {
+  font-size: 14px;
+  color: #666;
+  background: transparent;
+  margin-top: 10px;
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.right-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.input-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.input-row label {
+  min-width: 140px;
+  text-align: left;
+  font-weight: bold;
+}
+
+.input-row input:not([type="checkbox"]) {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  border: none;
+  background-color: #c8c8c8;
+  font-size: 14px;
+}
+
+/* Toggle Switch */
+.toggle-switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 24px;
+}
+
+.toggle-switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 24px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 18px;
+  width: 18px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider {
+  background-color: #2c514c;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+.right-section button {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #2c514c;
+  color: #e3c0d3;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  align-self: flex-start;
+}
+
+.right-section button:hover {
+  background-color: #23423d;
+}
 }

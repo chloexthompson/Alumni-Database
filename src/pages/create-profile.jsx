@@ -24,8 +24,6 @@ const handleSubmit = async () => {
   try {
     
 
-    alert("clicked button");
-
     // Save profile info to Firestore
     await addDoc(collection(db, "Profiles"), {
       name,

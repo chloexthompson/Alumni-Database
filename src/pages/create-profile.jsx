@@ -55,6 +55,7 @@ const handleSubmit = async () => {
     <div className="profile-page">
       <h1>networg</h1>
       <div id="main-card">
+HEAD
         <h2>Create Profile</h2>
         <div className="profile-container">
           {/* Left side */}
@@ -74,6 +75,31 @@ const handleSubmit = async () => {
                 onChange={handleImageUpload}
                 style={{ display: "none" }}
               />
+
+        <h2 style={{ marginTop:'-20px', marginBottom: '0px', background:'transparent' }}>Create Profile</h2>
+        
+        <div className="profile-content">
+          <div className="profile-left">
+            <label htmlFor="file-upload">
+              <div className="profile-picture-container">
+                {profileImage ? (
+                  <img src={profileImage} alt="Profile" />
+                ) : (
+                  <div className="profile-picture-placeholder">
+                    Click to add photo
+                  </div>
+                )}
+              </div>
+            </label>
+            <input
+              id="file-upload"
+              type="file"
+              accept="image/*"
+              onChange={handleImageUpload}
+            />
+            <label htmlFor="file-upload">
+              <span className="upload-button">Upload Photo</span>
+ eldaah
             </label>
           </div>
 

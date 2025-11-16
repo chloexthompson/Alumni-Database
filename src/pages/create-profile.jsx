@@ -91,7 +91,7 @@ function CreateProfile() {
         .profile-right {
           display: flex;
           flex-direction: column;
-          gap: 5px;
+          gap: 0px;
           background: transparent;
           flex: 1;
         }

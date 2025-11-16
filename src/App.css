@@ -12,6 +12,17 @@
     
 }
 
+#main-card {
+    width: 50rem;
+    height: 28rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    background-color: #e1e1e1;
+    margin: 30px;
+    padding: 2rem;
+    position: relative;
+}
+
 #main-card input {
     width: 250px;
     height: 43px;

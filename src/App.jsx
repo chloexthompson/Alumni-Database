@@ -14,7 +14,6 @@ import MyProfile from "./pages/my-profile.jsx";
 // import AlumniProfile from "./pages/AlumniProfile";
 // import About from "./pages/About";
 
-import OrgLogin from "./pages/org-login.jsx";
 import SignIn from "./pages/sign-in.jsx";
 import CreateProfile from "./pages/create-profile.jsx";
 

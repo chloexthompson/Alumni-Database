@@ -6,7 +6,7 @@ export default function Header(){
                           <img src="https://cdn-icons-png.flaticon.com/128/1286/1286853.png" alt="logout" />
                     </a>
 
-                    <a href="/view-profile">
+                    <a href="/my-profile">
                     <img src="https://cdn-icons-png.flaticon.com/128/15753/15753894.png" alt="profile" /></a>
                     
                     <a href="/home">

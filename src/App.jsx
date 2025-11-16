@@ -40,6 +40,7 @@ function App() {
         <Route path="/sign-in" element={<SignIn />}/> 
          <Route path="/view-profile" element={<Profile />}/>
         <Route path="/create-profile" element={<CreateProfile />}/>
+        <Route path="/profile/:id" element={<Profile />} />
         {/*<Route path="/home" element={<Home />}/>
         <Route path="/my-profile" element={<MyProfile />}/>
         {/* <Route path="/" element={<OrgLogin />} /> */}

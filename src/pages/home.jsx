@@ -11,7 +11,7 @@ export default function Home() {
   // Filter input states
   const [nameFilter, setNameFilter] = useState("");
   const [statusFilter, setStatusFilter] = useState("");
-  const [companyFilter, setCompanyFilter] = useState("");
+  const [majorFilter, setMajorFilter] = useState("");
 
   // Fetch profiles from Firestore
   useEffect(() => {
@@ -47,8 +47,8 @@ export default function Home() {
         stat?.toLowerCase() === statusFilter.toLowerCase();
 
       const matchesCompany =
-        companyFilter.trim() === "" ||
-        p.company?.toLowerCase().includes(companyFilter.toLowerCase());
+        majorFilter.trim() === "" ||
+        p.major?.toLowerCase().includes(majorFilter.toLowerCase());
 
       return matchesName && matchesStatus && matchesCompany;
     });
@@ -93,9 +93,9 @@ export default function Home() {
           <input
             type="text"
             className="filter-input"
-            placeholder="Company"
-            value={companyFilter}
-            onChange={(e) => setCompanyFilter(e.target.value)}
+            placeholder="Major"
+            value={majorFilter}
+            onChange={(e) => setMajorFilter(e.target.value)}
           />
 
           {/* Search button */}

@@ -69,6 +69,8 @@ export default function MyProfile() {
         marginBottom: '30px',
         display: 'block',
       }}>My Profile</h1>
+
+      <Header />
       
       <div style={{
         maxWidth: '800px',

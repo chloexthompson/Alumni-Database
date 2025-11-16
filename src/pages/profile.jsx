@@ -1,5 +1,9 @@
 import { useState } from "react";
 import Header from  "../components/header-icon.jsx";
+//import { useParams } from "react-router-dom";
+//import { useEffect, useState } from "react";
+//import { db } from "../firebase";
+//import { doc, getDoc } from "firebase/firestore";
 
 export default function Profile({ firstName, lastName, major, gradYear, referralStatus, description, skills }){
     const [connected, setConnected] = useState(false);

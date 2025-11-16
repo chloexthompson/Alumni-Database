@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Header from  "../components/header-icon.jsx";
 
+
 export default function MyProfile() {
   const [isEditing, setIsEditing] = useState(true);
   const [profile, setProfile] = useState({

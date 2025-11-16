@@ -8,11 +8,12 @@ export default function CreateProfile() {
   const navigate = useNavigate();
   const [headshot, setHeadshot] = useState(null);
   const [preview, setPreview] = useState(null);
+  const [name, setName] = useState("");
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [school, setSchool] = useState("");
-  const [year, setYear] = useState("");
+  const [graduationYear, setYear] = useState("");
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -24,16 +25,18 @@ export default function CreateProfile() {
     try {
       // Save profile info to Firestore
       await addDoc(collection(db, "Profiles"), {
-        firstName,
+        name,
+        
         lastName,
         email,
         school,
-        year,
+        graduationYear,
       });
 
       alert("Profile created successfully!");
 
       // Reset form
+      setName("");
       setFirstName("");
       setLastName("");
       setEmail("");
@@ -99,8 +102,9 @@ export default function CreateProfile() {
               <label>First Name:</label>
               <input 
                 type="text"
-                value={firstName} 
-                onChange={(e) => setFirstName(e.target.value)} 
+                value={name} 
+                // onChange={(e) => setFirstName(e.target.value)}
+                onChange={(e) => setName(e.target.value)} 
                 placeholder="First Name"
               />
             </div>
@@ -135,7 +139,7 @@ export default function CreateProfile() {
               <label>Year:</label>
               <input 
                 type="text"
-                value={year} 
+                value={graduationYear} 
                 onChange={(e) => setYear(e.target.value)} 
                 placeholder="Year"
               />

@@ -5,7 +5,7 @@ export default function OrgLogin() {
     return (
         <>
         <div>
-        <h1 >networg</h1>
+        <h1 >universe</h1>
         <div className="page-container">
       <div id="main-card">
         <h2>

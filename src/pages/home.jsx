@@ -59,7 +59,7 @@ export default function Home() {
   return (
     <>
       <div>
-        <h1>networg</h1>
+        <h1>universe</h1>
         <div>
           <Header />
         </div>

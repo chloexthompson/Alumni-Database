@@ -2,7 +2,7 @@ export default function SignIn() {
     return(
             <>
         <div>
-        <h1 >networg</h1>
+        <h1 >universe</h1>
         <div className="page-container">
 
       <div id="main-card">

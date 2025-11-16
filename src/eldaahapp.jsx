@@ -5,7 +5,6 @@ import "./pages/profile.css";
 // import your pages
 
 
-// import OrgLogin from "./pages/org-login.jsx";
 // import Home from "./pages/home.jsx";
 import MyProfile from "./pages/my-profile.jsx";
 // import SignIn from "./pages/sign-in.jsx";

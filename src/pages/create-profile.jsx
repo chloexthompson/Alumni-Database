@@ -1,178 +1,122 @@
-import React, { useState } from 'react';
+import { useState } from "react";
+import { db, storage } from "../firebase.js";
+import { collection, addDoc } from "firebase/firestore";
+import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
+import { useNavigate } from "react-router-dom"; 
 
-function CreateProfile() {
-  const [profileImage, setProfileImage] = useState(null);
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    school: '',
-    year: ''
-  });
+export default function CreateProfile() {
+  const navigate = useNavigate()
+  const [headshot, setHeadshot] = useState(null);
+  const [preview, setPreview] = useState(null);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [gradYear, setGradYear] = useState("");
+  const [linkedin, setLinkedin] = useState("");
+  const [status, setStatus] = useState(false);
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setProfileImage(reader.result);
-      };
-      reader.readAsDataURL(file);
-    }
+    setHeadshot(file);
+    setPreview(URL.createObjectURL(file));
   };
 
-  const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
+const handleSubmit = async () => {
+  try {
+    
 
-  const handleSubmit = () => {
-    console.log('Profile Data:', formData);
-    console.log('Profile Image:', profileImage);
-    alert('Profile saved successfully!');
-  };
+    alert("clicked button");
 
+    // Save profile info to Firestore
+    await addDoc(collection(db, "Profiles"), {
+      name,
+      email,
+      graduationYear: gradYear,
+      linkedin,
+      status: status,       // your graduation toggle
+    });
+
+    alert("Profile created successfully!");
+
+    // Reset form
+    setName("");
+    setEmail("");
+    setGradYear("");
+    setLinkedin("");
+    setStatus(false);
+    setHeadshot(null);
+    setPreview(null);
+
+    // Redirect to sign-in page
+    navigate("/sign-in"); // <-- make sure you have useNavigate()
+  } catch (err) {
+    console.error("Error creating profile: ", err);
+    alert("Failed to create profile");
+  }
+};
   return (
-    <div className="page-container" style={{ minHeight: '100vh' }}>
-      <style>{`
-        .profile-content {
-          display: flex;
-          gap: 30px;
-          align-items: flex-start;
-          background: transparent;
-        }
-
-        .profile-left {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          gap: 15px;
-          background: transparent;
-        }
-
-        .profile-picture-container {
-          width: 200px;
-          height: 200px;
-          border-radius: 50%;
-          background-color: #c8c8c8;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          overflow: hidden;
-          cursor: pointer;
-          position: relative;
-        }
-
-        .profile-picture-container img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-
-        .profile-picture-placeholder {
-          font-size: 14px;
-          color: #666;
-          background: transparent;
-        }
-
-        .upload-button {
-          background-color: #2c514c;
-          color: #e3c0d3;
-          padding: 8px 16px;
-          border-radius: 10px;
-          cursor: pointer;
-          font-size: small;
-          border: none;
-        }
-
-        .profile-right {
-          display: flex;
-          flex-direction: column;
-          gap: 0px;
-          background: transparent;
-          flex: 1;
-        }
-
-        input[type="file"] {
-          display: none;
-        }
-      `}</style>
-
+    <div className="profile-page">
+      <h1>networg</h1>
       <div id="main-card">
-        <h2 style={{ marginBottom: '1px', background: 'transparent' }}>Create Profile</h2>
-        
-        <div className="profile-content">
-          <div className="profile-left">
-            <label htmlFor="file-upload">
-              <div className="profile-picture-container">
-                {profileImage ? (
-                  <img src={profileImage} alt="Profile" />
-                ) : (
-                  <div className="profile-picture-placeholder">
-                    Click to add photo
-                  </div>
-                )}
-              </div>
-            </label>
-            <input
-              id="file-upload"
-              type="file"
-              accept="image/*"
-              onChange={handleImageUpload}
-            />
-            <label htmlFor="file-upload">
-              <span className="upload-button">Upload Photo</span>
+        <h2>Create Profile</h2>
+        <div className="profile-container">
+          {/* Left side */}
+          <div className="left-section">
+            <label className="image-upload-card">
+              {preview ? (
+                <img src={preview} className="preview-image" alt="Headshot" />
+              ) : (
+                <>
+                  <div className="plus-circle">+</div>
+                  <p>Add profile picture</p>
+                </>
+              )}
+              <input
+                type="file"
+                accept="image/*"
+                onChange={handleImageUpload}
+                style={{ display: "none" }}
+              />
             </label>
           </div>
 
-          <div className="profile-right">
-            <input
-              type="text"
-              name="firstName"
-              placeholder="First Name"
-              value={formData.firstName}
-              onChange={handleInputChange}
-            />
-            <input
-              type="text"
-              name="lastName"
-              placeholder="Last Name"
-              value={formData.lastName}
-              onChange={handleInputChange}
-            />
-            <input
-              type="email"
-              name="email"
-              placeholder="Email Address"
-              value={formData.email}
-              onChange={handleInputChange}
-            />
-            <input
-              type="text"
-              name="school"
-              placeholder="School"
-              value={formData.school}
-              onChange={handleInputChange}
-            />
-            <input
-              type="text"
-              name="year"
-              placeholder="Year"
-              value={formData.year}
-              onChange={handleInputChange}
-            />
+          {/* Right side */}
+          <div className="right-section">
+            <div className="input-row">
+              <label>Name:</label>
+              <input value={name} onChange={(e) => setName(e.target.value)} />
+            </div>
+            <div className="input-row">
+              <label>Email Address:</label>
+              <input value={email} onChange={(e) => setEmail(e.target.value)} />
+            </div>
+            <div className="input-row">
+              <label>Graduation Year:</label>
+              <input value={gradYear} onChange={(e) => setGradYear(e.target.value)} />
+            </div>
+               <div className="input-row">
+  <label>Graduated?</label>
+  <label className="toggle-switch">
+    <input
+      type="checkbox"
+      checked={status}
+      onChange={() => setStatus(!status)}
+    />
+    <span className="slider"></span>
+  </label>
+</div>
+
+            <div className="input-row">
+              <label>LinkedIn URL:</label>
+              <input
+                value={linkedin}
+                onChange={(e) => setLinkedin(e.target.value)}
+                placeholder="linkedin.com/in/..."
+              />
+            </div>
+            <button type="button" onClick={handleSubmit}>Create Profile</button>
           </div>
         </div>
-
-        <button onClick={handleSubmit}>
-          Save
-        </button>
       </div>
     </div>
   );
 }
-
-export default CreateProfile;

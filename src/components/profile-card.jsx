@@ -1,24 +1,25 @@
-import "profile-card.module.css";
+import styles from "./profile-card.module.css";
 
-/* Make a function that converts gradStatus (boolean) to a string*/
+const showGradStatus = (gradStatus) => {
+  return gradStatus ? "Alumni" : "Student";
+};
 
+const ProfileCard = ({ name, gradStatus, gradYear }) => {
+  return (
+   
+    <div id={styles.card} >
+      <img src="src/assets/profile.png" className={styles.headshotShape}  />
 
-const ProfileCard = ({headshot, name, gradStatus, gradYear}) => {
-    return(
-        <>
-        <div>
-            <img src={headshot} className="headshot-shape"/>
-            <div></div>
-            <h2>{name}</h2>
-            <div></div>
-            <h3>{gradStatus}</h3>
-            <div className="grad-year-box">
-                Class of {gradYear}
-            </div>
-        </div>
-  
-        </>
-    );
+      <h2 className={styles.name}>{name}</h2>
+
+      <h3 className={styles.status}>{showGradStatus(gradStatus)}</h3>
+
+      <div className={styles.gradYearBox}>
+        Class of {gradYear}
+      </div>
+    </div>
+   
+  );
 };
 
 export default ProfileCard;

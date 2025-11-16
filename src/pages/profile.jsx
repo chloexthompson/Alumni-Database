@@ -2,6 +2,11 @@ import { useState } from "react";
 
 export default function Profile({ firstName, lastName, major, gradYear, referralStatus, description, skills }){
     const [connected, setConnected] = useState(false);
+    const [connectionCount, setConnectionCount] = useState(0);
+    const handleConnectClick = () => {
+        setConnected(!connected);
+        setConnectionCount(connected ? connectionCount - 1 : connectionCount + 1);
+    };
 
     return(
         <div className="profile-page">
@@ -20,7 +25,7 @@ export default function Profile({ firstName, lastName, major, gradYear, referral
                     </div>
                     <button 
                         className="connect-btn"
-                        onClick={() => setConnected(!connected)}
+                        onClick={handleConnectClick}
                     >
                         {connected ? "Connected" : "+ Connect"}
                     </button>
@@ -37,7 +42,7 @@ export default function Profile({ firstName, lastName, major, gradYear, referral
 
                         <div className="connections-box">
                             <p className="connections-title">Connections</p>
-                            <p className="connections-number">12</p>
+                            <p className="connections-number">{connectionCount}</p>
                         </div>
                     </div>
 

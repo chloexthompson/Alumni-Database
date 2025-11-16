@@ -5,7 +5,7 @@ import { ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import { useNavigate } from "react-router-dom"; 
 
 export default function CreateProfile() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [headshot, setHeadshot] = useState(null);
   const [preview, setPreview] = useState(null);
   const [name, setName] = useState("");
@@ -20,42 +20,42 @@ export default function CreateProfile() {
     setPreview(URL.createObjectURL(file));
   };
 
-const handleSubmit = async () => {
-  try {
-    
+  const handleSubmit = async () => {
+    try {
+      // Save profile info to Firestore
+      await addDoc(collection(db, "Profiles"), {
+        name,
+        email,
+        graduationYear: gradYear,
+        linkedin,
+        status: status,
+      });
 
-    // Save profile info to Firestore
-    await addDoc(collection(db, "Profiles"), {
-      name,
-      email,
-      graduationYear: gradYear,
-      linkedin,
-      status: status,       // your graduation toggle
-    });
+      alert("Profile created successfully!");
 
-    alert("Profile created successfully!");
+      // Reset form
+      setName("");
+      setEmail("");
+      setGradYear("");
+      setLinkedin("");
+      setStatus(false);
+      setHeadshot(null);
+      setPreview(null);
 
-    // Reset form
-    setName("");
-    setEmail("");
-    setGradYear("");
-    setLinkedin("");
-    setStatus(false);
-    setHeadshot(null);
-    setPreview(null);
+      // Redirect to sign-in page
+      navigate("/sign-in");
+    } catch (err) {
+      console.error("Error creating profile: ", err);
+      alert("Failed to create profile");
+    }
+  };
 
-    // Redirect to sign-in page
-    navigate("/sign-in"); // <-- make sure you have useNavigate()
-  } catch (err) {
-    console.error("Error creating profile: ", err);
-    alert("Failed to create profile");
-  }
-};
   return (
     <div className="profile-page">
       <h1>networg</h1>
       <div id="main-card">
-        <h2>Create Profile</h2>
+        <h2 style={{ marginTop: '-20px', marginBottom: '0px', background: 'transparent' }}>Create Profile</h2>
+        
         <div className="profile-container">
           {/* Left side */}
           <div className="left-section">
@@ -91,18 +91,17 @@ const handleSubmit = async () => {
               <label>Graduation Year:</label>
               <input value={gradYear} onChange={(e) => setGradYear(e.target.value)} />
             </div>
-               <div className="input-row">
-  <label>Graduated?</label>
-  <label className="toggle-switch">
-    <input
-      type="checkbox"
-      checked={status}
-      onChange={() => setStatus(!status)}
-    />
-    <span className="slider"></span>
-  </label>
-</div>
-
+            <div className="input-row">
+              <label>Graduated?</label>
+              <label className="toggle-switch">
+                <input
+                  type="checkbox"
+                  checked={status}
+                  onChange={() => setStatus(!status)}
+                />
+                <span className="slider"></span>
+              </label>
+            </div>
             <div className="input-row">
               <label>LinkedIn URL:</label>
               <input

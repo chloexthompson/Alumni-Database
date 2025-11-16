@@ -91,7 +91,7 @@ function CreateProfile() {
         .profile-right {
           display: flex;
           flex-direction: column;
-          gap: 5px;
+          gap: 0px;
           background: transparent;
           flex: 1;
         }
@@ -102,7 +102,7 @@ function CreateProfile() {
       `}</style>
 
       <div id="main-card">
-        <h2 style={{ marginBottom: '20px', background: 'transparent' }}>Create Profile</h2>
+        <h2 style={{ marginBottom: '1px', background: 'transparent' }}>Create Profile</h2>
         
         <div className="profile-content">
           <div className="profile-left">

@@ -3,7 +3,6 @@ import './App.css';
 import "./pages/profile.css";
 
 // import your pages
-import Profile from "./pages/profile.jsx";
 
 import OrgLogin from "./pages/org-login.jsx";
 import SignIn from "./pages/sign-in.jsx";
@@ -32,7 +31,7 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* <Route path="/" element={<Profile {...userData} />} /> */}
+        <Route path="/" element={<Profile {...userData} />} />
         {/* <Route path="/" element={<Profile />} /> */}
         {/* <Route path="/" element={<OrgLogin />} /> */}
         {/* <Route path="/" element={<OrgLogin />} />

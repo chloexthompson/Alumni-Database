@@ -8,11 +8,11 @@ export default function CreateProfile() {
   const navigate = useNavigate();
   const [headshot, setHeadshot] = useState(null);
   const [preview, setPreview] = useState(null);
-  const [name, setName] = useState("");
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
-  const [gradYear, setGradYear] = useState("");
-  const [linkedin, setLinkedin] = useState("");
-  const [status, setStatus] = useState(false);
+  const [school, setSchool] = useState("");
+  const [year, setYear] = useState("");
 
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
@@ -24,21 +24,21 @@ export default function CreateProfile() {
     try {
       // Save profile info to Firestore
       await addDoc(collection(db, "Profiles"), {
-        name,
+        firstName,
+        lastName,
         email,
-        graduationYear: gradYear,
-        linkedin,
-        status: status,
+        school,
+        year,
       });
 
       alert("Profile created successfully!");
 
       // Reset form
-      setName("");
+      setFirstName("");
+      setLastName("");
       setEmail("");
-      setGradYear("");
-      setLinkedin("");
-      setStatus(false);
+      setSchool("");
+      setYear("");
       setHeadshot(null);
       setPreview(null);
 
@@ -52,16 +52,32 @@ export default function CreateProfile() {
 
   return (
     <div className="profile-page">
-      <h1>networg</h1>
       <div id="main-card">
-        <h2 style={{ marginTop: '-20px', marginBottom: '0px', background: 'transparent' }}>Create Profile</h2>
+        <button 
+          onClick={() => navigate(-1)} 
+          style={{ 
+            position: 'absolute', 
+            top: '15px', 
+            left: '15px', 
+            background: '#2c514c', 
+            color: '#e3c0d3', 
+            border: 'none', 
+            borderRadius: '10px', 
+            padding: '8px 16px', 
+            cursor: 'pointer',
+            fontSize: '14px'
+          }}
+        >
+          ← Back
+        </button>
+        <h2 style={{ marginTop: '-20px', marginBottom: '10px', background: 'transparent' }}>Create Profile</h2>
         
         <div className="profile-container">
-          {/* Left side */}
+          {/* Left side - Profile Picture */}
           <div className="left-section">
             <label className="image-upload-card">
               {preview ? (
-                <img src={preview} className="preview-image" alt="Headshot" />
+                <img src={preview} className="preview-image" alt="Profile" />
               ) : (
                 <>
                   <div className="plus-circle">+</div>
@@ -77,40 +93,54 @@ export default function CreateProfile() {
             </label>
           </div>
 
-          {/* Right side */}
+          {/* Right side - Form Fields */}
           <div className="right-section">
             <div className="input-row">
-              <label>Name:</label>
-              <input value={name} onChange={(e) => setName(e.target.value)} />
-            </div>
-            <div className="input-row">
-              <label>Email Address:</label>
-              <input value={email} onChange={(e) => setEmail(e.target.value)} />
-            </div>
-            <div className="input-row">
-              <label>Graduation Year:</label>
-              <input value={gradYear} onChange={(e) => setGradYear(e.target.value)} />
-            </div>
-            <div className="input-row">
-              <label>Graduated?</label>
-              <label className="toggle-switch">
-                <input
-                  type="checkbox"
-                  checked={status}
-                  onChange={() => setStatus(!status)}
-                />
-                <span className="slider"></span>
-              </label>
-            </div>
-            <div className="input-row">
-              <label>LinkedIn URL:</label>
-              <input
-                value={linkedin}
-                onChange={(e) => setLinkedin(e.target.value)}
-                placeholder="linkedin.com/in/..."
+              <label>First Name:</label>
+              <input 
+                type="text"
+                value={firstName} 
+                onChange={(e) => setFirstName(e.target.value)} 
+                placeholder="First Name"
               />
             </div>
-            <button type="button" onClick={handleSubmit}>Create Profile</button>
+            <div className="input-row">
+              <label>Last Name:</label>
+              <input 
+                type="text"
+                value={lastName} 
+                onChange={(e) => setLastName(e.target.value)} 
+                placeholder="Last Name"
+              />
+            </div>
+            <div className="input-row">
+              <label>Email:</label>
+              <input 
+                type="email"
+                value={email} 
+                onChange={(e) => setEmail(e.target.value)} 
+                placeholder="Email Address"
+              />
+            </div>
+            <div className="input-row">
+              <label>School:</label>
+              <input 
+                type="text"
+                value={school} 
+                onChange={(e) => setSchool(e.target.value)} 
+                placeholder="School"
+              />
+            </div>
+            <div className="input-row">
+              <label>Year:</label>
+              <input 
+                type="text"
+                value={year} 
+                onChange={(e) => setYear(e.target.value)} 
+                placeholder="Year"
+              />
+            </div>
+            <button type="button" onClick={handleSubmit}>Save</button>
           </div>
         </div>
       </div>

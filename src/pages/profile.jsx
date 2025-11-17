@@ -11,8 +11,7 @@ export default function Profile({ firstName, lastName, major, gradYear, referral
     const handleConnectClick = () => {
         setConnected(!connected);
         setConnectionCount(connected ? connectionCount - 1 : connectionCount + 1);
-    };
-export default function Profile(){
+    }
     return(
         <div className="profile-page">
             <div className="header-icons">

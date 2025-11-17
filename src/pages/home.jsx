@@ -110,6 +110,10 @@ export default function Home() {
               name={p.name}
               gradStatus={p.status}
               gradYear={p.graduationYear}
+              major={p.major}
+              referralStatus={p.referralStatus}
+              description={p.description}
+              skills={p.skills}
             />
           ))}
         </div>

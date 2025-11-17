@@ -1,9 +1,26 @@
-import { useState } from "react";
-import Header from  "../components/header-icon.jsx";
+// 
 
-export default function Profile({ firstName, lastName, major, gradYear, referralStatus, description, skills }){
+import { useState } from "react";
+import { useLocation } from "react-router-dom";
+import Header from "../components/header-icon.jsx";
+
+export default function Profile() {
+    const location = useLocation();
+    
+    // Get data from navigation state, with fallback defaults
+    const { 
+        firstName = 'First Name', 
+        lastName = 'Last Name', 
+        major = 'Major', 
+        gradYear = 'Graduation Year', 
+        referralStatus = 'Referral Status', 
+        description = 'Description', 
+        skills = ['Python', 'Power BI', 'Tableau', 'Analytics']
+    } = location.state || {};
+
     const [connected, setConnected] = useState(false);
     const [connectionCount, setConnectionCount] = useState(0);
+    
     const handleConnectClick = () => {
         setConnected(!connected);
         setConnectionCount(connected ? connectionCount - 1 : connectionCount + 1);
@@ -33,9 +50,9 @@ export default function Profile({ firstName, lastName, major, gradYear, referral
                 <div className="profile-right">
                     <div className="profile-top-row">
                         <div className="profile-info">
-                            <h2 className="profile-name">{firstName || 'First Name'} {lastName || 'Last Name'}</h2>
-                            <p className="major">{major || 'Major'}</p>
-                            <p className="grad-year">{gradYear || 'Graduation Year'}</p>
+                            <h2 className="profile-name">{firstName} {lastName}</h2>
+                            <p className="major">{major}</p>
+                            <p className="grad-year">{gradYear}</p>
                             <p className="referral">{referralStatus ? `Referral Status: ${referralStatus}` : 'Referral Status'}</p>
                         </div>
 
@@ -46,13 +63,13 @@ export default function Profile({ firstName, lastName, major, gradYear, referral
                     </div>
 
                     <div className="profile-description">
-                        {description || 'Description'}
+                        {description}
                     </div>
 
                     <div className="skills-section">
                         <div className="skills-title">Skills/Interests</div>
                         <div className="skills-list">
-                            {(skills && skills.length > 0 ? skills : ['Python', 'Power BI', 'Tableau', 'Analytics']).map((skill, index) => (
+                            {skills.map((skill, index) => (
                                 <span key={index} className="skill-pill">{skill}</span>
                             ))}
                         </div>
